@@ -1,6 +1,6 @@
-name: globalPlugin
+name: minecraftBotPaper
 version: ${version}
-main: ${group}.GlobalPlugin
-api-version: 1.17
+main: ${group}.minecraftBotPaperPlugin
+api-version: 1.18
 libraries:
-  - io.github.monun:kommand:2.6.4
+  - io.github.monun:kommand:2.8.0

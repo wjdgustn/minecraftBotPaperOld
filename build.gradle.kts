@@ -6,7 +6,7 @@ plugins {
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(16))
+        languageVersion.set(JavaLanguageVersion.of(17))
     }
 }
 
@@ -16,8 +16,8 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.17.1-R0.1-SNAPSHOT")
-    compileOnly("io.github.monun:kommand-api:2.6.4")
+    compileOnly("io.papermc.paper:paper-api:1.18.1-R0.1-SNAPSHOT")
+    compileOnly("io.github.monun:kommand-api:2.8.0")
 
     implementation(kotlin("stdlib"))
 }
@@ -48,13 +48,13 @@ tasks {
 
     register<Jar>("paperJar") {
         archiveVersion.set("")
-        archiveBaseName.set("globalPlugin")
+        archiveBaseName.set("minecraftBotPaper")
         from(sourceSets["main"].output)
 
         doLast {
             copy {
                 from(archiveFile)
-                val plugins = File("D:/Programming/hypixel_copy/lobby-server/plugins")
+                val plugins = File("D:/mcservers_discord/server_0614e0d8889391d0ad6c75f477589e46/plugins")
                 into(if (File(plugins, archiveFileName.get()).exists()) File(plugins, "update") else plugins)
             }
         }

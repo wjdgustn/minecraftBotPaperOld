@@ -1,1 +1,1 @@
-rootProject.name = "globalPlugin"
+rootProject.name = "minecraftBotPaper"
