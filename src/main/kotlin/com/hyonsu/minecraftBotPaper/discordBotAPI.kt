@@ -27,3 +27,8 @@ fun playerAchievement(player: Player, achievement: Advancement): String {
     if(apiServer == null || serverID == null) return "noapi"
     return URL("$apiServer/api/achievement?server=$serverID&name=${player.name}&uuid=${player.uniqueId}&achievement=${URLEncoder.encode(achievement.key.key)}").readText()
 }
+
+fun openSpoiler(player: Player, message: String, spoiler: String) {
+    if(apiServer == null || serverID == null) return
+    URL("$apiServer/api/spoiler?server=$serverID&name=${player.name}&message=${URLEncoder.encode(message)}&spoiler=${URLEncoder.encode(spoiler)}").readText()
+}

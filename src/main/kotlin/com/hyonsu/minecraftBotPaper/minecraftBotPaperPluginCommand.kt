@@ -3,6 +3,7 @@ package com.hyonsu.minecraftBotPaper
 import io.github.monun.kommand.KommandArgument
 import io.github.monun.kommand.PluginKommand
 import io.github.monun.kommand.StringType
+import io.github.monun.kommand.getValue
 import org.bukkit.ChatColor
 import org.bukkit.command.ConsoleCommandSender
 
@@ -26,6 +27,18 @@ fun PluginKommand.command() {
                 apiServer = it.get<String>("apiServer")
 
                 println("${ChatColor.GREEN}Server setup finished($apiServer ${serverID})")
+            }
+        }
+    }
+
+    register("openspoiler") {
+        requires { playerOrNull != null }
+        then("message" to string, "spoiler" to string) {
+            executes {
+                val message: String by it
+                val spoiler: String by it
+
+                openSpoiler(player, message, spoiler)
             }
         }
     }
