@@ -54,7 +54,7 @@ tasks {
         doLast {
             copy {
                 from(archiveFile)
-                val plugins = File("D:/mcservers_discord/server_0614e0d8889391d0ad6c75f477589e46/plugins")
+                val plugins = File("D:/mcservers_discord/server_145159101ea88c4860ad07d16e30121b/plugins")
                 into(if (File(plugins, archiveFileName.get()).exists()) File(plugins, "update") else plugins)
             }
         }
