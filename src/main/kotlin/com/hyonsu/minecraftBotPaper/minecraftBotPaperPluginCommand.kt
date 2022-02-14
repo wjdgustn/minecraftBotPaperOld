@@ -6,6 +6,7 @@ import io.github.monun.kommand.StringType
 import io.github.monun.kommand.getValue
 import org.bukkit.ChatColor
 import org.bukkit.command.ConsoleCommandSender
+import org.bukkit.entity.Player
 
 fun PluginKommand.command() {
     val bool = KommandArgument.bool()
@@ -39,6 +40,20 @@ fun PluginKommand.command() {
                 val spoiler: String by it
 
                 openSpoiler(player, message, spoiler)
+            }
+        }
+    }
+
+    register("connectp") {
+        requires { playerOrNull == null || isOp }
+        then("players" to KommandArgument.players(), "server" to greedy) {
+            executes {
+                val players: Collection<Player> by it
+                val server: String by it
+
+                players.forEach {
+                    waterfallStdin("connect $server ${it.name}")
+                }
             }
         }
     }

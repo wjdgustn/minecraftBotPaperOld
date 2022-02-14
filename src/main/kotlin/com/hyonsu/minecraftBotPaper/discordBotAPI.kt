@@ -32,3 +32,8 @@ fun openSpoiler(player: Player, message: String, spoiler: String) {
     if(apiServer == null || serverID == null) return
     URL("$apiServer/api/spoiler?server=$serverID&name=${player.name}&message=${URLEncoder.encode(message)}&spoiler=${URLEncoder.encode(spoiler)}").readText()
 }
+
+fun waterfallStdin(stdin: String) {
+    if(apiServer == null || serverID == null) return
+    URL("$apiServer/api/waterfallstdin?stdin=${URLEncoder.encode(stdin)}").readText()
+}
