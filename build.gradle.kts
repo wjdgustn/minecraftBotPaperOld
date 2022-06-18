@@ -16,8 +16,8 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.18.1-R0.1-SNAPSHOT")
-    compileOnly("io.github.monun:kommand-api:2.10.0")
+    compileOnly("io.papermc.paper:paper-api:1.19-R0.1-SNAPSHOT")
+    compileOnly("io.github.monun:kommand-api:2.12.0")
 
     implementation(kotlin("stdlib"))
 }
@@ -54,8 +54,9 @@ tasks {
         doLast {
             copy {
                 from(archiveFile)
-                val plugins = File("D:/mcservers_discord/server_3c1b7be5a11c5b63b165f52b1541f29b/plugins")
-                into(if (File(plugins, archiveFileName.get()).exists()) File(plugins, "update") else plugins)
+                val plugins = File("C:/users/computer/desktop")
+//                into(if (File(plugins, archiveFileName.get()).exists()) File(plugins, "update") else plugins)
+                into(plugins)
             }
         }
     }
