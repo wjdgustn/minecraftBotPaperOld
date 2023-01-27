@@ -16,8 +16,8 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.19-R0.1-SNAPSHOT")
-    compileOnly("io.github.monun:kommand-api:2.12.0")
+    compileOnly("io.papermc.paper:paper-api:1.19.3-R0.1-SNAPSHOT")
+    compileOnly("io.github.monun:kommand-api:3.0.0")
 
     implementation(kotlin("stdlib"))
 }
@@ -54,7 +54,7 @@ tasks {
         doLast {
             copy {
                 from(archiveFile)
-                val plugins = File("C:/users/computer/desktop")
+                val plugins = File("C:/users/HYONSU/desktop")
 //                into(if (File(plugins, archiveFileName.get()).exists()) File(plugins, "update") else plugins)
                 into(plugins)
             }
